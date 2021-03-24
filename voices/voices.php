@@ -271,6 +271,7 @@ function showVoicesAndSearch($atts, $content="") {
 	$html = "<div class='voices_main'>";
     $html .= showFilters();
     $html .= showVoices();
+    $html .= "<div class='loader hidden'></div>";
 	$html .= "</div>";
 	return $html;
 }

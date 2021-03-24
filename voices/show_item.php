@@ -33,8 +33,9 @@ function getSrcIfNotEmpty($type){
 function showMedias($id){
     $html = "<div class='medias medias_".get_the_ID()."'>";
     $html .= showMediaIfNotEmpty('Comercial', 'comercial', 'audio', 'audio/mpeg');
+    $html .= showMediaIfNotEmpty('Institucional', 'personagem', 'audio', 'audio/mpeg');
     $html .= showMediaIfNotEmpty('Informativo', 'informativo', 'audio', 'audio/mpeg');
-    $html .= showMediaIfNotEmpty('Personagem', 'personagem', 'audio', 'audio/mpeg');
+    $html .= showMediaIfNotEmpty('IVR', 'ivr', 'audio', 'audio/mpeg');
     $html .= showMediaIfNotEmpty('Vídeo', 'video', 'video', 'video/mp4');
     $html .= "</div>";
     return $html;
@@ -44,7 +45,7 @@ function showMediaIfNotEmpty($name, $type, $media, $mediaType){
     $id = get_post_meta(get_the_ID(), $type, true);
     if(!empty($id)){
         $html .= "<div class='$media media_$id' onclick='play(".get_the_ID().",".$id.")'><span class='type'>$name</span>";
-        $html .= "<$media controls style='display: none;'><source src='".wp_get_attachment_url($id)."' type='$mediaType'></$media></div>";
+        $html .= "<div class='container_media'><$media controls style='display: none;' playsinline><source src='".wp_get_attachment_url($id)."' type='$mediaType'></$media><i class='fas fa-times' style='display: none;'></i></div></div>";
     } else {
         $html .= "<div class='$media media_$id empty_media' ><span class='type'>$name</span></div>";
     }

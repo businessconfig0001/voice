@@ -239,11 +239,11 @@ function play(mainId, id) {
         
         video.play();
         type.addClass('pause');
-        video.toggle();
+        //video.toggle();
     }else if (video && video) {
         video.pause();
         type.removeClass('pause');
-        video.toggle();
+        //video.toggle();
     }else {
         audio.pause();
         type.removeClass('pause');
@@ -263,7 +263,7 @@ function pauseLast(){
     if (video) {
         video.pause();
         type.removeClass('pause');
-        video.toggle();
+        //video.toggle();
     }
 }
 function old_play(id) {

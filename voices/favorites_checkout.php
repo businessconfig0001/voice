@@ -52,7 +52,7 @@ function showContactForm(){
       <div class='row'><div class='col-6-first'><input type='text' id='email' name='email' placeholder='E-mail' required /></div>
       <div class='col-6-last'><input type='text' id='empresa' name='empresa' placeholder='Empresa'></div></div>";
     $html .= showCountries();
-    $html .= "<div class='row'><div class='col'><input type='area' id='projeto' name='projeto' placeholder='Descrição do Projeto'></div></div>";
+    $html .= "<div class='row'><div class='col'><textarea type='area' id='projeto' name='projeto' placeholder='Descrição do Projeto'></textarea></div></div>";
     $html .= "<div class='botaoenviar'><a type='submit' value='Enviar' class='et_pb_button et_pb_button_0 et_pb_bg_layout_light' onclick='sendRequest()'>Enviar Mensagem</a></div>";
     $html .= "</form>";
     return $html;
