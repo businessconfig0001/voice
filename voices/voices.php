@@ -186,7 +186,7 @@ function checkFilters($args){
     $args['meta_query'] = array('relation' => 'AND');
     
     if(strcmp($_POST['language'], "Todos") !== 0){
-        $args = addMeta($args, $_POST['language'], 'linguagens');
+        $args = addMeta($args, $_POST['language'].'";}', 'linguagens');
     }
     if(strcmp($_POST['gender'], "Todos") !== 0){
         $args = addMeta($args, $_POST['gender'], 'genero');
