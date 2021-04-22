@@ -19,6 +19,7 @@ function get_download_src($id){
     $srcs = getSrcIfNotEmpty('comercial');
     $srcs .= getSrcIfNotEmpty('informativo');
     $srcs .= getSrcIfNotEmpty('personagem');
+    $srcs .= getSrcIfNotEmpty('ivr');
     return $srcs;
 }
 function getSrcIfNotEmpty($type){
