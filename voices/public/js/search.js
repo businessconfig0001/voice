@@ -29,7 +29,17 @@ jQuery(document).ready(function($){
     $(".medias audio").each(function(n) {
             $(this).attr("id", "audio" + n);
       });
+    checkFavorites();
 });
+function checkFavorites(){
+    var cookie = getCookie("favorite_voice");
+    var cookies = cookie.split("|");
+    for (i = 0; i < cookies.length; i++) {
+        var id = cookies[i];
+        changeCssClass(id);
+    }
+    setFavoriteCount(cookie);
+}
 function multi_download(links){
     var links_array = links.split(",");
 
@@ -76,12 +86,12 @@ function sendRequest(){
 		'nome': jQuery('#nome').val(),
 		'apelido': jQuery('#apelido').val(),
 		'email': jQuery('#email').val(),
-		'empresa': jQuery('#empresa').val(),
-		'pais': jQuery('#pais').val(),
+		'telefone': jQuery('#telefone').val(),
 		'projeto': jQuery('#projeto').val()
 	};
     jQuery.post('/wp-admin/admin-ajax.php', data, function(response) {
-        alert(response);
+        response = JSON.parse(response);
+        alert(response.data);
     });
 }
 function cleanFilters(){
@@ -132,6 +142,7 @@ function search(){
         jQuery('#voice_main').html(response);
         loadmore_params.current_page = 1;
         updateCount();
+        checkFavorites();
     });
 }
 function updateCount(){

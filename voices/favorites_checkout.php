@@ -3,8 +3,7 @@ function sendRequest(){
     $nome = $_POST['nome'];
     $apelido = $_POST['apelido'];
     $email = $_POST['email'];
-    $empresa = $_POST['empresa'];
-    $pais = $_POST['pais'];
+    $telefone = $_POST['telefone'];
     $projeto = $_POST['projeto'];
 		
     $to = getOption('voz_admin_email'); 
@@ -15,14 +14,15 @@ function sendRequest(){
         Nome: $nome
         Apelido: $apelido
         E-mail: $email
-        Empresa: $empresa
-        País: $pais
+        Telefone: $telefone
         Projeto: $projeto
         
         Favoritos: ".getFavoriteListToEmail();
     $sent = wp_mail($to, $subject, strip_tags($message), $headers);
     
-    echo "Estamos gratos pela sua mensagem! Seu pedido foi enviado e em breve estaremos retornando o contato!";
+    $msg = "Obrigado pelo seu contacto. O seu pedido foi enviado. Iremos responder brevemente.";
+	echo json_encode(array('status'=>200, 'data'=>$msg));
+    exit;
 }
 function getFavoriteListToEmail(){
     $result = "";
@@ -31,7 +31,7 @@ function getFavoriteListToEmail(){
     $list = explode("|", $favorites);
     foreach ($list as $value) {
         if(!empty($value)){
-           $result .= getVoiceToEmail($value);
+           $result .= getVoiceToEmail($value)." | ";
         }
     }
     return $result;
@@ -50,8 +50,8 @@ function showContactForm(){
       <div class='row'><div class='col-6-first'><input type='text' id='nome' name='nome' placeholder='Nome' required /></div>
       <div class='col-6-last'><input type='text' id='apelido' name='apelido' placeholder='Apelido'></div></div>
       <div class='row'><div class='col-6-first'><input type='text' id='email' name='email' placeholder='E-mail' required /></div>
-      <div class='col-6-last'><input type='text' id='empresa' name='empresa' placeholder='Empresa'></div></div>";
-    $html .= showCountries();
+      <div class='col-6-last'><input type='text' id='telefone' name='telefone' placeholder='Telefone'></div></div>";
+    //$html .= showCountries();
     $html .= "<div class='row'><div class='col'><textarea type='area' id='projeto' name='projeto' placeholder='Descrição do Projeto'></textarea></div></div>";
     $html .= "<div class='botaoenviar'><a type='submit' value='Enviar' class='et_pb_button et_pb_button_0 et_pb_bg_layout_light' onclick='sendRequest()'>Enviar Mensagem</a></div>";
     $html .= "</form>";
