@@ -29,14 +29,20 @@ jQuery(document).ready(function($){
     $(".medias audio").each(function(n) {
             $(this).attr("id", "audio" + n);
       });
-    checkFavorites();
+    if (jQuery('#voice_main').html() !== undefined){
+        checkFavorites();  
+    }
 });
 function checkFavorites(){
     var cookie = getCookie("favorite_voice");
     var cookies = cookie.split("|");
+    jQuery('.voice_on_quote').remove();
+    
     for (i = 0; i < cookies.length; i++) {
         var id = cookies[i];
         changeCssClass(id);
+        // removeItem(id);
+        jQuery('.voices_on_quote').last().after(getItem(id));
     }
     setFavoriteCount(cookie);
 }
@@ -92,6 +98,7 @@ function sendRequest(){
     jQuery.post('/wp-admin/admin-ajax.php', data, function(response) {
         response = JSON.parse(response);
         alert(response.data);
+        removeAllFavorites();
     });
 }
 function cleanFilters(){

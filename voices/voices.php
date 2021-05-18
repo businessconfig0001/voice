@@ -27,6 +27,7 @@ error_reporting(E_ALL);
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       voices
+ * Domain Path:       /languages
  */
 
 include 'config.php';
@@ -80,15 +81,21 @@ function adminMenus() {
 	$top_menu_item = 'voicesDashboardAdminPage';
 	add_menu_page( '', 'Vozes', 'manage_options', 'voicesDashboardAdminPage', 'voicesDashboardAdminPage', 'dashicons-megaphone');
     
-    add_submenu_page( $top_menu_item, '', 'Configurações', 'manage_options', $top_menu_item, $top_menu_item );
-    add_submenu_page( $top_menu_item, '', 'Vozes', 'manage_options', 'edit.php?post_type=voz');
+    add_submenu_page( $top_menu_item, '', __( "Configurações", "voices" ), 'manage_options', $top_menu_item, $top_menu_item );
+    add_submenu_page( $top_menu_item, '', __( "Vozes", "voices" ), 'manage_options', 'edit.php?post_type=voz');
 }
+
+add_action( 'plugins_loaded', 'voices_load_textdomain' );
+function voices_load_textdomain() {
+    load_plugin_textdomain('voices', false, basename(dirname( __FILE__ )).'/languages/' );
+}
+
 define("PLUGIN_OPTIONS_NAME", 'voz_plugin_options');
 function voicesDashboardAdminPage() {
     $options = getCurrentOptions();
 	
 	echo('<div class="wrap">
-		<h2>Voices List and Search</h2>
+		<h2>'.__( "Voices List and Search", "voices" ).'</h2>
 		<form action="options.php" method="post">');
 		
 			settings_fields(PLUGIN_OPTIONS_NAME);
@@ -97,24 +104,24 @@ function voicesDashboardAdminPage() {
 			echo('<table class="form-table">
 				<tbody>
 					<tr>
-						<th scope="row"><label for="voz_show_per_page">Quantidade de registros por página</label></th>
+						<th scope="row"><label for="voz_show_per_page">'.__( "Quantidade de registros por página", "voices" ).'</label></th>
 						<td>
 							<input type="number" name="voz_show_per_page" value="'.$options['voz_show_per_page'].'" class="" />
-							<p class="description" id="voz_show_per_page-description">Quantidade de registros buscados por vez</p>
+							<p class="description" id="voz_show_per_page-description">'.__( "Quantidade de registros buscados por vez", "voices" ).'</p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="voz_checkout_page">Página de checkout</label></th>
+						<th scope="row"><label for="voz_checkout_page">'.__( "Página de checkout", "voices" ).'</label></th>
 						<td>
 							<input type="text" name="voz_checkout_page" value="'.$options['voz_checkout_page'].'" class="" />
-							<p class="description" id="voz_checkout_page-description">Página para a qual o usuário será direcionado para fazer o pedido de cotação</p>
+							<p class="description" id="voz_checkout_page-description">'.__( "Página para a qual o usuário será direcionado para fazer o pedido de cotação", "voices" ).'</p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="voz_admin_email">E-mail do administrador</label></th>
+						<th scope="row"><label for="voz_admin_email">'.__( "E-mail do administrador", "voices" ).'</label></th>
 						<td>
 							<input type="email" name="voz_admin_email" value="'.$options['voz_admin_email'].'" class="" />
-							<p class="description" id="voz_admin_email-description">Este e-mail irá receber os pedidos de cotação</p>
+							<p class="description" id="voz_admin_email-description">'.__( "Este e-mail irá receber os pedidos de cotação", "voices" ).'</p>
 						</td>
 					</tr>
 				</tbody>
@@ -149,9 +156,9 @@ function getDefaultOptions() {
 function voiceColumnHeaders($columns) {
 	$columns = array(
 		'cb'=>'<input type="checkbox" />',
-		'nome'=>__('Nome'),
-		'genero'=>__('Gênero'),
-		'linguagens'=>__('Linguagens'),
+		'nome'=>__('Nome', "voices"),
+		'genero'=>__('Gênero', "voices"),
+		'linguagens'=>__('Linguagens', "voices"),
 	);
 	return $columns;
 }
@@ -185,13 +192,13 @@ function voiceSearch(){
 function checkFilters($args){
     $args['meta_query'] = array('relation' => 'AND');
     
-    if(strcmp($_POST['language'], "Todos") !== 0){
+    if(strcmp($_POST['language'], __( "Todos", "voices" )) !== 0){
         $args = addMeta($args, $_POST['language'].'";}', 'linguagens');
     }
-    if(strcmp($_POST['gender'], "Todos") !== 0){
+    if(strcmp($_POST['gender'], __( "Todos", "voices" )) !== 0){
         $args = addMeta($args, $_POST['gender'], 'genero');
     }
-    if(strcmp($_POST['category'], "Todos") !== 0){
+    if(strcmp($_POST['category'], __( "Todos", "voices" )) !== 0){
         $args['cat'] = $_POST['category'];
     }
     if(strcmp($_POST['age'], "") !== 0){
@@ -276,7 +283,7 @@ function showVoicesAndSearch($atts, $content="") {
 	return $html;
 }
 function showResultCount(){
-    return "<div class='voices_count'>Resultados: <span id='result_count'>".getOption('voz_show_per_page')."</span></div>";
+    return "<div class='voices_count'>".__( "Resultados", "voices" ).": <span id='result_count'>".getOption('voz_show_per_page')."</span></div>";
 }
 function searchOnAjax($args){
     $loop = getQuery($args);

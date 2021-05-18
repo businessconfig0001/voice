@@ -4,14 +4,14 @@ function showAllCategories(){
         'orderby' => 'id',
         'order'   => 'ASC'
     ));
-    return printSelect("categories_filter", "Categoria", $categories);
+    return printSelect("categories_filter", __( "Categoria", "voices" ), $categories);
 }
 function printSelectToSelectionMetadata($selectId, $defaultText, $metaKey){
     $values = formatSelectionMetadata(generateDefaultQuery($metaKey));
     $selected = '';
     
     $htmlCode = '<select name="'.$selectId.'" id="'.$selectId.'">';
-    $htmlCode .= '<option value="Todos">'.$defaultText.'</option>';
+    $htmlCode .= '<option value="'.__( "Todos", "voices" ).'">'.$defaultText.'</option>';
     if($values!=NULL){
         foreach ($values as $option) { 
             if(!empty($option)){
@@ -27,7 +27,7 @@ function printSelectToRadioMetadata($selectId, $defaultText, $metaKey){
     $selected = '';
     
     $htmlCode = '<select name="'.$selectId.'" id="'.$selectId.'">';
-    $htmlCode .= '<option value="Todos">'.$defaultText.'</option>';
+    $htmlCode .= '<option value="'.__( "Todos", "voices" ).'">'.$defaultText.'</option>';
     if($values!=NULL){
         foreach ($values as $option) { 
             if(!empty($option->value)){
@@ -40,7 +40,7 @@ function printSelectToRadioMetadata($selectId, $defaultText, $metaKey){
 }
 function printSelect($selectId, $defaultText, $values){
     $htmlCode = '<select name="'.$selectId.'" id="'.$selectId.'">';
-    $htmlCode .= '<option value="Todos">'.$defaultText.'</option>';
+    $htmlCode .= '<option value="'.__( "Todos", "voices" ).'">'.$defaultText.'</option>';
     if($values!=NULL){
         foreach ($values as $option) { 
             //var_dump($option);

@@ -7,16 +7,16 @@ function cptui_register_my_cpts_voz() {
 	 */
 
 	$labels = array(
-		"name" => __( "Vozes", "storefront" ),
-		"singular_name" => __( "Voz", "storefront" ),
-		"add_new" => __( "Adicionar nova voz", "storefront" ),
-		"add_new_item" => __( "Adicionar nova voz", "storefront" ),
-		"edit_item" => __( "Editar voz", "storefront" ),
-		"new_item" => __( "Nova voz", "storefront" ),
+		"name" => __( "Vozes", "voices" ),
+		"singular_name" => __( "Voz", "voices" ),
+		"add_new" => __( "Adicionar nova voz", "voices" ),
+		"add_new_item" => __( "Adicionar nova voz", "voices" ),
+		"edit_item" => __( "Editar voz", "voices" ),
+		"new_item" => __( "Nova voz", "voices" ),
 	);
 
 	$args = array(
-		"label" => __( "Vozes", "storefront" ),
+		"label" => __( "Vozes", "voices" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -48,11 +48,11 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5c76c7ce83b56',
-	'title' => 'Atributos de Voz',
+	'title' => __( "Atributos de Voz", "voices" ),
 	'fields' => array(
 		array(
 			'key' => 'field_5c76ca0fff41f',
-			'label' => 'Nome',
+			'label' => __( "Nome", "voices" ),
 			'name' => 'nome',
 			'type' => 'text',
 			'instructions' => '',
@@ -71,7 +71,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76c7ebac5da',
-			'label' => 'Gênero',
+			'label' => __( "Gênero", "voices" ),
 			'name' => 'genero',
 			'type' => 'radio',
 			'instructions' => '',
@@ -83,8 +83,8 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'Feminino' => 'Feminino',
-				'Masculino' => 'Masculino',
+				'Feminino' => __( "Feminino", "voices" ),
+				'Masculino' => __( "Masculino", "voices" ),
 			),
 			'allow_null' => 0,
 			'other_choice' => 0,
@@ -95,7 +95,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76c831ac5db',
-			'label' => 'Idades',
+			'label' => __( "Idades", "voices" ),
 			'name' => 'idades',
 			'type' => 'checkbox',
 			'instructions' => '',
@@ -123,7 +123,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76ca2eff420',
-			'label' => 'Linguagens',
+			'label' => __( "Linguagens", "voices" ),
 			'name' => 'linguagens',
 			'type' => 'checkbox',
 			'instructions' => '',
@@ -135,18 +135,18 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'Espanhol' => 'Espanhol',
-				'Francês' => 'Francês',
-				'Inglês UK' => 'Inglês UK',
-				'Inglês USA' => 'Inglês USA',
-				'Italiano' => 'Italiano',
-				'Japonês' => 'Japonês',
-				'Mandarim' => 'Mandarim',
-				'Português' => 'Português',
-				'Português do Brasil' => 'Português do Brasil',
-				'Alemão' => 'Alemão',
-				'Angolano' => 'Angolano',
-				'Outro' => 'Outro',
+				'Espanhol' => __( "Espanhol", "voices" ),
+				'Francês' => __( "Francês", "voices" ),
+				'Inglês UK' => __( "Inglês UK", "voices" ),
+				'Inglês USA' => __( "Inglês USA", "voices" ),
+				'Italiano' => __( "Italiano", "voices" ),
+				'Japonês' => __( "Japonês", "voices" ),
+				'Mandarim' => __( "Mandarim", "voices" ),
+				'Português' => __( "Português", "voices" ),
+				'Português do Brasil' => __( "Português do Brasil", "voices" ),
+				'Alemão' => __( "Alemão", "voices" ),
+				'Angolano' => __( "Angolano", "voices" ),
+				'Outro' => __( "Outro", "voices" ),
 			),
 			'allow_custom' => 0,
 			'default_value' => array(
@@ -158,7 +158,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c7d92ca4f242',
-			'label' => 'Biografia',
+			'label' => __( "Biografia", "voices" ),
 			'name' => 'biografia',
 			'type' => 'textarea',
 			'instructions' => '',
@@ -177,7 +177,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76caaeff421',
-			'label' => 'Comercial',
+			'label' => __( "Comercial", "voices" ),
 			'name' => 'comercial',
 			'type' => 'file',
 			'instructions' => '',
@@ -196,7 +196,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76cb2404e83',
-			'label' => 'informativo',
+			'label' => __( "Informativo", "voices" ),
 			'name' => 'informativo',
 			'type' => 'file',
 			'instructions' => '',
@@ -215,7 +215,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76cb2304e82',
-			'label' => 'Institucional',
+			'label' => __( "Institucional", "voices" ),
 			'name' => 'personagem',
 			'type' => 'file',
 			'instructions' => '',
@@ -234,7 +234,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5c76cb2104e81',
-			'label' => 'Vídeo',
+			'label' => __( "Vídeo", "voices" ),
 			'name' => 'video',
 			'type' => 'file',
 			'instructions' => '',

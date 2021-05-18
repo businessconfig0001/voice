@@ -11,6 +11,7 @@ function showGetAQuote(){
 function showFavoriteList(){
     $html = "<div id='voices_on_quote' class='voices_on_quote'>";
         $favorites = getFavoriteVoicesCookie();
+        //$html .= var_export($favorites);
         $list = explode("|", $favorites);
         foreach ($list as $value) {
             if(!empty($value)){
@@ -32,7 +33,7 @@ function showRemoveAllFavorite(){
     return "<a id='removeAll' onclick='removeAllFavorites()'><i class='fas fa-user-slash'></i></a>";
 }
 function showSendAsk(){
-    return "<div class='botaopedido'><a href='".getOption('voz_checkout_page')."'>Pedir Cotação</a></div>";
+    return "<div class='botaopedido'><a href='".getOption('voz_checkout_page')."'>".__( "Pedir Cotação", "voices" )."</a></div>";
 }
 function showFavoriteCountBox(){
     $html = "<div id='quote_count_box'>";
@@ -40,7 +41,7 @@ function showFavoriteCountBox(){
         //$html .= showFavoriteCount();
         //$html .= "</span>";
             
-        $html .= "Favoritos";
+        $html .= __( "Favoritos", "voices" );
     $html .= "</div>";
     return $html;
 }

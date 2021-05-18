@@ -8,8 +8,8 @@ function showItem(){
         $html .= showAddRemoveIcons(get_the_ID());
         $html .= showAge(get_post_meta(get_the_ID(), 'data_de_nascimento', true));
         $html .= "<div id='mais_info_".get_the_ID()."' class='mais_info_".get_the_ID()." mais_info' style='display: none;'><div class='bio'>".get_post_meta(get_the_ID(), 'biografia', true)."</div>";
-           // $html .= "<div class='linguagens'>".showLanguages(get_post_meta(get_the_ID(), 'linguagens', true))."</div>";
-        $html .= "<a id='share_$id' class='share' onclick='share(\"".get_permalink(get_the_ID())."\")'>Share</a>";
+           
+        //$html .= "<a id='share_$id' class='share' onclick='share(\"".get_permalink(get_the_ID())."\")'>Share</a>";
         $html .= "<a id='download_$id' class='download' onclick='multi_download(\"".get_download_src(get_the_ID())."\")'>Download</a>";
         $html .= "</div>";
     $html .= "</div>";
@@ -33,11 +33,11 @@ function getSrcIfNotEmpty($type){
 
 function showMedias($id){
     $html = "<div class='medias medias_".get_the_ID()."'>";
-    $html .= showMediaIfNotEmpty('Comercial', 'comercial', 'audio', 'audio/mpeg');
-    $html .= showMediaIfNotEmpty('Institucional', 'personagem', 'audio', 'audio/mpeg');
-    $html .= showMediaIfNotEmpty('Informativo', 'informativo', 'audio', 'audio/mpeg');
-    $html .= showMediaIfNotEmpty('IVR', 'ivr', 'audio', 'audio/mpeg');
-    $html .= showMediaIfNotEmpty('Vídeo', 'video', 'video', 'video/mp4');
+    $html .= showMediaIfNotEmpty(__( "Comercial", "voices" ), 'comercial', 'audio', 'audio/mpeg');
+    $html .= showMediaIfNotEmpty(__( "Institucional", "voices" ), 'personagem', 'audio', 'audio/mpeg');
+    $html .= showMediaIfNotEmpty(__( "Informativo", "voices" ), 'informativo', 'audio', 'audio/mpeg');
+    $html .= showMediaIfNotEmpty(__( "IVR", "voices" ), 'ivr', 'audio', 'audio/mpeg');
+    $html .= showMediaIfNotEmpty(__( "Vídeo", "voices" ), 'video', 'video', 'video/mp4');
     $html .= "</div>";
     return $html;
 }
@@ -53,13 +53,13 @@ function showMediaIfNotEmpty($name, $type, $media, $mediaType){
     return $html;
 }
 function showAddRemoveIcons($id){
-    return "<a id='addremove_$id' class='addremove' onclick='addRemoveFavorite(".$id.")'>Add / Remove</a>";
+    return "<a id='addremove_$id' class='addremove' onclick='addRemoveFavorite(".$id.")'>".__( "Add / Remove", "voices" )."</a>";
 }
 function showMoreInfo($id){
     return "<div id='more_$id' class='more' onclick='more_info(".$id.")'><i class='fas fa-chevron-down'></i></div>";
 }
 function showAge($data){
-    $html = "<div class='age'>Idade: ";
+    $html = "<div class='age'>".__( "Idade", "voices" ).": ";
     $date = DateTime::createFromFormat('Ymd', $data);
     $now = date("Y");
     $html .= intval(date("Y")) - intval($date->format("Y"));
@@ -67,7 +67,7 @@ function showAge($data){
     return $html;
 }
 function showLanguages($languages){
-    $linguages = "Linguagens: ";
+    $linguages = __( "Linguagens", "voices" ).": ";
     foreach ($languages as $value) {
         $linguages .= $value.", ";    
     }
