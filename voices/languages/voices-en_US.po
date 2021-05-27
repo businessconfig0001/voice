@@ -1,0 +1,259 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Voices\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-18 16:18+0000\n"
+"PO-Revision-Date: 2021-05-19 10:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.5.3\n"
+"X-Domain: voices"
+
+#: show_item.php:56
+msgid "Add / Remove"
+msgstr ""
+
+#: cpt/voz.php:12 cpt/voz.php:13
+msgid "Adicionar nova voz"
+msgstr ""
+
+#: cpt/voz.php:147
+msgid "Alemão"
+msgstr ""
+
+#: cpt/voz.php:148
+msgid "Angolano"
+msgstr ""
+
+#: favorites_checkout.php:15 favorites_checkout.php:51
+msgid "Apelido"
+msgstr ""
+
+#: cpt/voz.php:51
+msgid "Atributos de Voz"
+msgstr ""
+
+#: cpt/voz.php:161
+msgid "Biografia"
+msgstr ""
+
+#. Author of the plugin
+msgid "Business Config"
+msgstr ""
+
+#: select_from_metadata.php:7
+msgid "Categoria"
+msgstr ""
+
+#: show_item.php:36 cpt/voz.php:180
+msgid "Comercial"
+msgstr ""
+
+#: voices.php:84
+msgid "Configurações"
+msgstr ""
+
+#: favorites_checkout.php:55
+msgid "Descrição do Projeto"
+msgstr ""
+
+#: favorites_checkout.php:16 favorites_checkout.php:52
+msgid "E-mail"
+msgstr ""
+
+#: voices.php:121
+msgid "E-mail do administrador"
+msgstr ""
+
+#: cpt/voz.php:14
+msgid "Editar voz"
+msgstr ""
+
+#: favorites_checkout.php:56
+msgid "Enviar Mensagem"
+msgstr ""
+
+#: cpt/voz.php:138
+msgid "Espanhol"
+msgstr ""
+
+#: voices.php:124
+msgid "Este e-mail irá receber os pedidos de cotação"
+msgstr ""
+
+#: quote.php:43 favorites_checkout.php:20
+msgid "Favoritos"
+msgstr ""
+
+#: cpt/voz.php:86
+msgid "Feminino"
+msgstr ""
+
+#: cpt/voz.php:139
+msgid "Francês"
+msgstr ""
+
+#: filters.php:22 voices.php:160 cpt/voz.php:74
+msgid "Gênero"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://businessconfig.com"
+msgstr ""
+
+#: filters.php:28 show_item.php:62
+msgid "Idade"
+msgstr ""
+
+#: cpt/voz.php:98
+msgid "Idades"
+msgstr ""
+
+#: filters.php:4
+msgid "Idioma"
+msgstr ""
+
+#: show_item.php:38 cpt/voz.php:199
+msgid "Informativo"
+msgstr ""
+
+#: cpt/voz.php:140
+msgid "Inglês UK"
+msgstr "English UK"
+
+#: cpt/voz.php:141
+msgid "Inglês USA"
+msgstr ""
+
+#: show_item.php:37 cpt/voz.php:218
+msgid "Institucional"
+msgstr ""
+
+#: cpt/voz.php:142
+msgid "Italiano"
+msgstr ""
+
+#: show_item.php:39
+msgid "IVR"
+msgstr ""
+
+#: cpt/voz.php:143
+msgid "Japonês"
+msgstr ""
+
+#: show_item.php:70 voices.php:161 cpt/voz.php:126
+msgid "Linguagens"
+msgstr ""
+
+#: cpt/voz.php:144
+msgid "Mandarim"
+msgstr ""
+
+#: cpt/voz.php:87
+msgid "Masculino"
+msgstr ""
+
+#: favorites_checkout.php:44
+msgid "Meus Favoritos"
+msgstr ""
+
+#: voices.php:159 favorites_checkout.php:14 favorites_checkout.php:50
+#: cpt/voz.php:55
+msgid "Nome"
+msgstr ""
+
+#: cpt/voz.php:15
+msgid "Nova voz"
+msgstr ""
+
+#: favorites_checkout.php:10 favorites_checkout.php:13
+msgid "Novo pedido"
+msgstr ""
+
+#: favorites_checkout.php:23
+msgid ""
+"Obrigado pelo seu contacto. O seu pedido foi enviado. Iremos responder "
+"brevemente."
+msgstr ""
+
+#: cpt/voz.php:149
+msgid "Outro"
+msgstr ""
+
+#: quote.php:35
+msgid "Pedir Cotação"
+msgstr ""
+
+#: cpt/voz.php:145
+msgid "Português"
+msgstr ""
+
+#: cpt/voz.php:146
+msgid "Português do Brasil"
+msgstr ""
+
+#: filters.php:15
+msgid "Procurar"
+msgstr ""
+
+#: favorites_checkout.php:18
+msgid "Projeto"
+msgstr ""
+
+#: voices.php:114
+msgid "Página de checkout"
+msgstr ""
+
+#: voices.php:117
+msgid ""
+"Página para a qual o usuário será direcionado para fazer o pedido de cotação"
+msgstr ""
+
+#: voices.php:110
+msgid "Quantidade de registros buscados por vez"
+msgstr ""
+
+#: voices.php:107
+msgid "Quantidade de registros por página"
+msgstr ""
+
+#: voices.php:286
+msgid "Resultados"
+msgstr ""
+
+#: favorites_checkout.php:17 favorites_checkout.php:53
+msgid "Telefone"
+msgstr ""
+
+#: select_from_metadata.php:14 select_from_metadata.php:30
+#: select_from_metadata.php:43 voices.php:195 voices.php:198 voices.php:201
+msgid "Todos"
+msgstr ""
+
+#. Name of the plugin
+msgid "Voices"
+msgstr ""
+
+#. Description of the plugin
+#: voices.php:98
+msgid "Voices List and Search"
+msgstr ""
+
+#: cpt/voz.php:11
+msgid "Voz"
+msgstr ""
+
+#: voices.php:85 cpt/voz.php:10 cpt/voz.php:19
+msgid "Vozes"
+msgstr ""
+
+#: show_item.php:40 cpt/voz.php:237
+msgid "Vídeo"
+msgstr ""
