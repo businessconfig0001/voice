@@ -10,7 +10,7 @@ function showItem(){
         $html .= "<div id='mais_info_".get_the_ID()."' class='mais_info_".get_the_ID()." mais_info' style='display: none;'><div class='bio'>".get_post_meta(get_the_ID(), 'biografia', true)."</div>";
            
         //$html .= "<a id='share_$id' class='share' onclick='share(\"".get_permalink(get_the_ID())."\")'>Share</a>";
-        $html .= "<a id='download_$id' class='download' onclick='multi_download(\"".get_download_src(get_the_ID())."\")'>Download</a>";
+        $html .= "<a id='download_$id' class='download' onclick='multi_download(\"".get_download_src(get_the_ID())."\")'><img class='download-icon' width=50 src='".plugin_dir_url( __DIR__ )."/voices/public/img/download.svg' alt='Download'></a>";
         $html .= "</div>";
     $html .= "</div>";
     return $html;
