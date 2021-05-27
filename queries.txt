@@ -1,1 +1,5 @@
 UPDATE `wp_sdfpostmeta` set meta_value = REPLACE(meta_value, '../wp-content/', '/wp-content/') where meta_key = 'biografia';
+
+--Todas as vozes para PT
+INSERT INTO wp_sdfterm_relationships
+SELECT ID,37,0 FROM wp_sdfposts WHERE post_type='voz';
