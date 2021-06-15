@@ -2,4 +2,12 @@ UPDATE `wp_sdfpostmeta` set meta_value = REPLACE(meta_value, '../wp-content/', '
 
 --Todas as vozes para PT
 INSERT INTO wp_sdfterm_relationships
-SELECT ID,37,0 FROM wp_sdfposts WHERE post_type='voz';
+SELECT ID,34,0 FROM wp_sdfposts WHERE post_type='voz';
+
+
+--Portfolio para PT (37 em dev)
+INSERT INTO wp_sdfterm_relationships
+SELECT ID,34,0 FROM wp_sdfposts WHERE post_type='wpb_fp_portfolio';
+
+
+delete from wp_sdfterm_relationships where term_taxonomy_id=34 and object_id in (28367,26940,28259,27717);
